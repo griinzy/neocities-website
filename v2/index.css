@@ -1,0 +1,350 @@
+:root {
+    --white: #f5efe8;
+    --background: #f2f0e3;
+    --background2: #f5ead4;
+    --black: #2d2a2a;
+    --black2: #3d3a3a;
+    --black3: #3d3a3a50;
+    --tan: #ece6c2;
+    --teal: #73bda8;
+    --gold: #d2a24c;
+    --orange: #cc6b49;
+    --red: #d67776;
+
+    --teal-semi: #73bda880;
+    --gold-semi: #d2a24c80;
+    --orange-semi: #cc6b4980;
+    --red-semi: #d6777680;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /*cursor: default;*/
+    color: var(--black);
+    font-family: 'Lora';
+}
+
+*::selection {
+    color: var(--tan);
+    background-color: var(--orange);
+}
+
+body {
+    background-color: var(--background2);
+    min-height: 666px;
+}
+
+body::after {
+    content: "";
+    background-image: url(../images/noise.png);
+    z-index: 99;
+    position: fixed;
+    inset: 0;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.main-header { 
+    display: flex;
+    margin: 30px auto 180px auto;
+    width: 900px;
+}
+
+.main-header > span:not(.flex-1) {
+    display: inline-block;
+    color: var(--teal);
+    background-color: var(--black2);
+    padding:  0 6px;
+    border-radius: 0.2rem;
+    /* box-shadow: 0px 5px 10px -3px var(--black3); */
+    filter: drop-shadow(4px 4px 0px);
+}
+
+.body-container {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    gap: 80px;
+    width: fit-content;
+}
+
+.main-container {
+    width: 600px;
+    flex-shrink: 0;
+}
+
+.h1-1 {
+    transform: rotateZ(-6deg);
+}
+
+.h1-2 {
+    color: var(--red) !important;
+    transform: rotateZ(-2deg);
+    margin-left: 8px; 
+}
+
+.h1-3 {
+    color: var(--gold) !important;
+    transform: rotateZ(4deg);
+    margin-left: 15px;
+    margin-bottom: 5px; 
+}
+
+.h1-4 {
+    color: var(--orange) !important;
+    transform: rotateZ(2deg);
+    margin-left: 12px;
+}
+
+.h1-5 {
+    color: var(--teal) !important;
+    transform: rotateZ(12deg);
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.discord-profile {
+    background-color: var(--black2);
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    border-radius: 0.5rem;
+    transform: rotateZ(1deg);
+    box-shadow: 0px 5px 20px 0px var(--black3);
+}
+
+.profile-info > div > h3, .profile-info > p {
+    color: var(--background2);
+}
+
+.profile-info {
+    margin-left: 16px;
+    gap: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+#discord-pfp {
+    height: 60px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+}
+
+#discord-status {
+    font-size: 10pt;
+}
+
+#status-indicator {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    background-color: gray;
+    border-radius: 100%;
+    margin-top: 4px;
+}
+
+.status-online {
+    background-color: var(--teal) !important;
+    box-shadow: 0px 0px 8px 0.3px var(--teal);
+}
+
+.status-idle {
+    background-color: var(--gold) !important;
+    box-shadow: 0px 0px 8px 0.3px var(--gold);
+}
+
+.status-dnd {
+    background-color: var(--red) !important;
+    box-shadow: 0px 0px 8px 0.3px var(--red);
+}
+
+.song-info {
+    display: none;
+    /* display: flex; */
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+
+    background-color: var(--black2);
+    margin-bottom: 30px;
+    padding: 16px;
+    border-radius: 0.5rem;
+    transform: rotateZ(-1.2deg);
+    box-shadow: 0px 5px 20px 0px var(--black3);
+}
+
+.song-text {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.song-text > p, .song-text > a {
+    color: var(--background2);
+}
+
+#song-title {
+    width: 265px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#song-title:hover {
+    text-decoration: underline;
+}
+
+#song-artist {
+    font-size: 11pt;
+    width: 265px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#song-image {
+    /* height: 60px; */
+    height: 70px;
+    border-radius: 0.4rem;
+}
+
+#song-image {
+    cursor: pointer;
+}
+
+.spin {
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+#listening-to {
+    font-size: 10pt;
+}
+
+.opening-paragraph {
+    margin: 30px 10px;
+    text-align: justify;
+    font-weight: 400;
+    /* font-family: 'Rubik Mono One'; */
+    font-family: Outfit;
+}
+
+.page-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.page-links > a {
+    text-decoration: none;
+    background-color: var(--black2);
+    color: var(--background2);
+    font-weight: bold;
+    border-radius: 0.4rem;
+    aspect-ratio: 2/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18pt;
+    cursor: pointer;
+
+    transition: transform 0.4s ease-out, box-shadow 0.3s ease-out;
+}
+
+.about-link {
+    background-color: var(--gold) !important;
+    box-shadow: 0px 5px 40px 5px var(--gold-semi);
+}
+
+.about-link:hover {
+    box-shadow: 0px 5px 40px 5px var(--gold);
+    transform: rotateZ(-2deg);
+}
+
+.projects-link {
+    background-color: var(--orange) !important;
+    box-shadow: 0px 5px 40px 5px var(--orange-semi);
+}
+
+.projects-link:hover {
+    box-shadow: 0px 5px 40px 5px var(--orange);
+    transform: rotateZ(1.2deg);
+}
+
+.blog-link {
+    background-color: var(--red) !important;
+    box-shadow: 0px 5px 40px 5px var(--red-semi);
+}
+
+.blog-link:hover {
+    box-shadow: 0px 5px 40px 5px var(--red);
+    transform: rotateZ(-2deg);
+}
+
+.music-link {
+    background-color: var(--teal) !important;
+    box-shadow: 0px 5px 40px 5px var(--teal-semi);
+}
+
+.music-link:hover {
+    box-shadow: 0px 5px 40px 5px var(--teal);
+    transform: rotateZ(2deg);
+}
+
+.marquee-container {
+    position: relative;
+    overflow: hidden;
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    height: 20px;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-text {
+    color: var(--black2);
+    font-weight: 600;
+    position: absolute;
+    white-space: nowrap;
+    animation: slideLeft 10s linear forwards;
+}
+
+.marquee-text > a {
+    color: var(--black2);
+    cursor: pointer;
+}
+
+@keyframes slideLeft {
+    from {
+        left: 100%;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+.side-container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
