@@ -66,9 +66,9 @@ fetch(apiUrl)
         name.innerText = user.display_name;
         const activities = data.data.activities;
         if (activities.length > 0) {
-            let statusEmoji = activities[0].emoji.name ? activities[0].emoji.name : "";
+            let statusEmoji = activities[0].emoji ? activities[0].emoji.name : "";
             let statusText = activities[0].state ? activities[0].state : "";
-            status.innerText = statusEmoji + " " + statusText;
+            status.innerText = (statusEmoji + " " + statusText).trim();
         }
 
         statusIndicator.classList.remove('status-online', 'status-idle', 'status-dnd');
