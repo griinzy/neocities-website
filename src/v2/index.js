@@ -65,7 +65,7 @@ fetch(apiUrl)
         pfp.src = `https://cdn.discordapp.com/avatars/${userId}/${avatarId}.png`;
         name.innerText = user.display_name;
         const activities = data.data.activities;
-        if (activities.length > 0) {
+        if (activities.length > 0 && activities[0].id == "custom") {
             let statusEmoji = activities[0].emoji ? activities[0].emoji.name : "";
             let statusText = activities[0].state ? activities[0].state : "";
             status.innerText = (statusEmoji + " " + statusText).trim();

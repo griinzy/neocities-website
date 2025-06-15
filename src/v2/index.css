@@ -5,6 +5,7 @@
     --black: #2d2a2a;
     --black2: #3d3a3a;
     --black3: #3d3a3a50;
+    --text-unmarked: #6b6b6b;
     --tan: #ece6c2;
     --teal: #73bda8;
     --gold: #d2a24c;
@@ -175,7 +176,6 @@ body::after {
     gap: 12px;
     align-items: center;
     background-color: var(--black2);
-    margin-bottom: 30px;
     padding: 16px;
     border-radius: 0.5rem;
     transform: rotateZ(-1.2deg);
@@ -306,6 +306,13 @@ body::after {
     transform: rotateZ(2deg);
 }
 
+.sitemap-link {
+    color: var(--text-unmarked);
+    text-decoration: underline dotted var(--text-unmarked);
+    font-size: 10pt;
+    text-align: center;
+}
+
 .marquee-container {
     position: relative;
     overflow: hidden;
@@ -317,7 +324,7 @@ body::after {
 }
 
 .marquee-text {
-    color: var(--black2);
+    color: var(--text-unmarked);
     font-weight: 600;
     position: absolute;
     white-space: nowrap;
@@ -325,7 +332,7 @@ body::after {
 }
 
 .marquee-text > a {
-    color: var(--black2);
+    color: var(--text-unmarked);
     cursor: pointer;
 }
 
