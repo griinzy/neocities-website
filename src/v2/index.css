@@ -23,7 +23,6 @@
 * {
     margin: 0;
     padding: 0;
-    /*cursor: default;*/
     color: var(--black);
     font-family: 'Lora';
 }
@@ -33,19 +32,25 @@
     background-color: var(--orange);
 }
 
-body {
-    background-color: var(--background2);
-    min-height: 666px;
+html {
+    position: relative;
+    min-height: 100%;
 }
 
-body::after {
+html::after {
     content: "";
     background-image: url(../images/noise.png);
     z-index: 99;
-    position: fixed;
+    position: absolute;
     inset: 0;
     opacity: 0.08;
     pointer-events: none;
+    height: 100%;
+}
+
+body {
+    background-color: var(--background2);
+    min-height: 666px;
 }
 
 .main-header { 
@@ -407,7 +412,7 @@ body::after {
 
 .github-last-update, .github-last-update span {
     color: var(--text-unmarked-2);
-    font-size: 11pt;
+    font-size: 10pt;
     text-align: end;
     width: 100%;
     cursor: help;
