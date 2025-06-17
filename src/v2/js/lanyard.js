@@ -1,12 +1,8 @@
-let userId = '589800051447037962';
-let name = document.getElementById('discord-name');
-let pfp = document.getElementById('discord-pfp');
-let status = document.getElementById('discord-status');
-let statusIndicator = document.getElementById('status-indicator');
-let songTitle = document.getElementById('song-title');
-let songArtist = document.getElementById('song-artist');
-let songImage = document.getElementById('song-image');
-let songImageLink = document.getElementById('song-image-link');
+const userId = '589800051447037962';
+const name = document.getElementById('discord-name');
+const pfp = document.getElementById('discord-pfp');
+const status = document.getElementById('discord-status');
+const statusIndicator = document.getElementById('status-indicator');
 
 const lanyardUrl = `https://api.lanyard.rest/v1/users/${userId}`;
 fetch(lanyardUrl)
@@ -27,7 +23,7 @@ fetch(lanyardUrl)
                 if(!(activities[index].name == "Spotify" || activities[index].name == "Feishin")) {
                     if(activities[index].id == "custom") {
                         let statusEmoji = activities[index].emoji ? activities[index].emoji.name : "";
-                        let statusText = activites[index].state ? activities[index].state : "";
+                        let statusText = activities[index].state ? activities[index].state : "";
                         userStatus = (statusEmoji + " " + statusText).trim();
                     }
 
@@ -68,17 +64,5 @@ fetch(lanyardUrl)
                 break;
             default:
                 break;
-        }
-
-
-        if(data.data.listening_to_spotify) {
-            let spotifyData = data.data.spotify;
-
-            document.getElementsByClassName('song-info')[0].style.display = 'flex';
-            songTitle.innerText = spotifyData.song;
-            songTitle.href = `spotify:track:${spotifyData.track_id}`;
-            songArtist.innerText = spotifyData.artist;
-            songImage.src = spotifyData.album_art_url;
-            songImage.title = "Album: " + spotifyData.album;
         }
     });

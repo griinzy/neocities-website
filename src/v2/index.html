@@ -55,9 +55,9 @@
 
             <div class="song-info">
                 <div class="song-text">
-                    <p id="listening-to">currently listening to:</p>
-                    <a id="song-title" title="open in spotify app"></a>
-                    <p id="song-artist"></p>
+                    <p id="song-status"></p>
+                    <a id="song-title" target="_blank"></a>
+                    <a id="song-artist" target="_blank"></a>
                 </div>
                 <div class="flex-1"></div>
                 <a id="song-image-link"><img id="song-image" class="" src="" alt=""></a>
@@ -69,12 +69,12 @@
                 <div class="github-header">
                     <h3>website updates</h3>
                     <div class="flex-1"></div>
-                    <a target="_blank" href="https://github.com/griinzy/neocities-website">github</a>
+                    <a target="_blank" href="https://github.com/griinzy/neocities-website/commits/main/" title="github">view all</a>
                 </div>
                 <div class="commit-panel" id="commit-panel">
                     <template id="github-commit-template">
-                        <a class="commit-message" target="_blank" href="https://github.com/griinzy/neocities-website/commit/c4cc4a9169c6ee3912f699b9d4b5b9188c9a3342">
-                            <p class="commit-text">12.06.2025 - fixed the status once and for all (hopefully)</p>
+                        <a class="commit-message" target="_blank">
+                            <p class="commit-text"></p>
                         </a>
                     </template>
                 </div>
@@ -85,6 +85,7 @@
         <script src="./js/marquee.js"></script>
         <script src="./js/lanyard.js"></script>
         <script src="./js/github.js"></script>
+        <script src="./js/lastfm.js"></script>
 </body>
 
 </html>
