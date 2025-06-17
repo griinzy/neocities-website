@@ -383,11 +383,11 @@ body::after {
 .commit-panel {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     width: 100%;
 }
 
-.commit-panel > hr {
+.github-updates-panel hr {
     color: var(--background2);
     border: dashed 1px;
     width: 100%;
@@ -403,4 +403,12 @@ body::after {
 .commit-message > p {
     color: var(--background2);
     font-size: 11pt;
+}
+
+.github-last-update, .github-last-update span {
+    color: var(--text-unmarked-2);
+    font-size: 11pt;
+    text-align: end;
+    width: 100%;
+    cursor: help;
 }
