@@ -4,8 +4,10 @@
     --background2: #f5ead4;
     --black: #2d2a2a;
     --black2: #3d3a3a;
+    --black-foreground: #636363;
     --black3: #3d3a3a50;
-    --text-unmarked: #6b6b6b;
+    --text-unmarked-1: #6b6b6b;
+    --text-unmarked-2: #e0d5bc;
     --tan: #ece6c2;
     --teal: #73bda8;
     --gold: #d2a24c;
@@ -307,8 +309,8 @@ body::after {
 }
 
 .sitemap-link {
-    color: var(--text-unmarked);
-    text-decoration: underline dotted var(--text-unmarked);
+    color: var(--text-unmarked-1);
+    text-decoration: underline dotted var(--text-unmarked-1);
     font-size: 10pt;
     text-align: center;
 }
@@ -324,7 +326,7 @@ body::after {
 }
 
 .marquee-text {
-    color: var(--text-unmarked);
+    color: var(--text-unmarked-1);
     font-weight: 600;
     position: absolute;
     white-space: nowrap;
@@ -332,7 +334,7 @@ body::after {
 }
 
 .marquee-text > a {
-    color: var(--text-unmarked);
+    color: var(--text-unmarked-1);
     cursor: pointer;
 }
 
@@ -354,10 +356,53 @@ body::after {
 
 .github-updates-panel {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
     background-color: var(--black2);
     padding: 16px;
     border-radius: 0.5rem;
-    transform: rotateZ(-1.2deg);
     box-shadow: 0px 5px 20px 0px var(--black3);
+}
+
+.github-updates-panel h3 {
+    font-size: 13pt;
+    color: var(--background2);
+}
+
+.github-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.github-header a {
+    color: var(--text-unmarked-2);
+    text-decoration: underline dotted var(--text-unmarked-2);
+    font-size: 11pt;
+}
+
+.commit-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.commit-panel > hr {
+    color: var(--background2);
+    border: dashed 1px;
+    width: 95%;
+    margin: auto;
+}
+.commit-message {
+    /* background-color: var(--black-foreground); */
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 0.3rem;
+}
+
+.commit-message > p {
+    color: var(--background2);
+    font-size: 11pt;
 }
