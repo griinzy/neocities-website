@@ -2,8 +2,7 @@ const commitPanel = document.getElementById('commit-panel');
 const lastUpdate = document.getElementById('last-update');
 
 const repo = 'neocities-website'
-// const githubUrl = `https://api.gunjicordia.xyz/github/commits/${repo}`;
-const githubUrl = `http://localhost:8002/github/commits/${repo}`;
+const githubUrl = `https://api.gunjicordia.xyz/github/commits/${repo}`;
 
 const githubTemplate = document.getElementById('github-commit-template');
 
