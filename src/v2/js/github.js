@@ -11,26 +11,36 @@ fetch(githubUrl)
     .then(data => {
         const commits = data.commits;
         let index = 0;
-        while(index < 5 && index < commits.length) {
-            let separator = document.createElement('hr');
-            commitPanel.appendChild(separator);
+        let shown = 0;
 
-            let commitUrl = commits[index].html_url;
+        while (index < commits.length && shown < 5) {
             let commitMessage = commits[index].commit.message;
-            let commitDate = new Date(commits[index].commit.committer.date).toLocaleDateString('en-GB').replaceAll('/','.');
+            let firstLine = commitMessage.split('\n')[0];
+            let firstChar = firstLine.trim().charAt(0);
 
-            let githubCommitElem = githubTemplate.content.cloneNode(true);
-            githubCommitElem.querySelector('.commit-message').href = commitUrl;
-            githubCommitElem.querySelector('.commit-text').innerText = commitDate + " - " + commitMessage.split('\n')[0];
-            
-            commitPanel.appendChild(githubCommitElem);
+            if (firstChar === firstChar.toLowerCase() && firstChar.match(/[a-z]/)) {
+                let separator = document.createElement('hr');
+                commitPanel.appendChild(separator);
 
-            lastUpdate.innerText = formatTime(data.cacheAge);
+                let commitUrl = commits[index].html_url;
+                let commitDate = new Date(commits[index].commit.committer.date)
+                    .toLocaleDateString('en-GB')
+                    .replaceAll('/', '.');
+
+                let githubCommitElem = githubTemplate.content.cloneNode(true);
+                githubCommitElem.querySelector('.commit-message').href = commitUrl;
+                githubCommitElem.querySelector('.commit-text').innerText = commitDate + " - " + firstLine;
+
+                commitPanel.appendChild(githubCommitElem);
+
+                lastUpdate.innerText = formatTime(data.cacheAge);
+
+                shown++;
+            }
 
             index++;
         }
-    })
-
+    });
 function formatTime(seconds) {
     const units = [
         { label: "month", seconds: 2592000 },
