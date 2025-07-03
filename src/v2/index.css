@@ -113,6 +113,8 @@ body {
     flex: 1;
 }
 
+
+
 .discord-profile {
     background-color: var(--black2);
     align-items: center;
@@ -121,7 +123,6 @@ body {
     padding: 16px;
     border-radius: 0.5rem;
     transform: rotateZ(1deg);
-    box-shadow: 0px 5px 20px 0px var(--black3);
 }
 
 .profile-info > div > h3, .profile-info > p {
@@ -186,7 +187,6 @@ body {
     padding: 16px;
     border-radius: 0.5rem;
     transform: rotateZ(-1.2deg);
-    box-shadow: 0px 5px 20px 0px var(--black3);
 }
 
 .song-text {
@@ -223,10 +223,10 @@ body {
 #song-image {
     height: 70px;
     border-radius: 0.4rem;
-}
-
-#song-image {
     cursor: pointer;
+    background-image: url(../images/no-cover.png);
+    aspect-ratio: 1;
+    background-size: cover;
 }
 
 .spin {
@@ -301,12 +301,12 @@ body {
     transform: rotateZ(-2deg);
 }
 
-.music-link {
+.gallery-link {
     background-color: var(--teal) !important;
     box-shadow: 0px 5px 40px 5px var(--teal-semi);
 }
 
-.music-link:hover {
+.gallery-link:hover {
     box-shadow: 0px 5px 40px 5px var(--teal);
     transform: rotateZ(2deg);
 }
@@ -357,6 +357,10 @@ body {
     gap: 20px;
 }
 
+.side-container > div {
+        box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);
+}
+
 .github-updates-panel {
     display: flex;
     flex-direction: column;
@@ -365,7 +369,6 @@ body {
     background-color: var(--black2);
     padding: 16px;
     border-radius: 0.5rem;
-    box-shadow: 0px 5px 20px 0px var(--black3);
 }
 
 .github-updates-panel h3 {
@@ -399,7 +402,6 @@ body {
     margin: auto;
 }
 .commit-message {
-    /* background-color: var(--black-foreground); */
     padding: 12px;
     text-decoration: none;
     border-radius: 0.3rem;
@@ -416,4 +418,56 @@ body {
     text-align: end;
     width: 100%;
     cursor: help;
+}
+
+.silly-collapse {
+    background-color: var(--black2);
+    border-radius: 0.5rem;
+}
+
+.silly-collapse > details {
+    padding: 20px;
+}
+
+.silly-collapse > details[open] > summary {
+    padding-bottom: 10px;
+}
+
+.silly-collapse > details > summary {
+    cursor: pointer;
+    color: var(--background2);
+}
+
+.silly-collapse > details > div {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+}
+
+.silly-collapse > details > div > input[type="number"] {
+    width: 64px;
+}
+
+.silly-collapse p {
+    color: var(--background2);
+    font-size: 11pt;
+}
+
+#silly-reset-btn {
+    width: 100%;
+    aspect-ratio: 8/1;
+    background-color: var(--red);
+    border: none;
+    border-radius: 0.3rem;
+    color: var(--background2);
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#website-rotate, #website-skew {
+    border-radius: 0.3rem;
+    padding: 3px;
+    border: none;
+    color: var(--black2);
 }
